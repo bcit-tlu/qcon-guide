@@ -9,12 +9,9 @@ Information about how to use [Qcon](https://qcon.ltc.bcit.ca).
 
 ```bash
 docker compose up
-
-On Windows:
-MSYS_NO_PATHCONV=1 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 ```
 
-1. Browse to [http://localhost:8000](http://localhost:8000) to see site; live reload is enabled.
+1. Browse to [http://localhost:8080](http://localhost:8080) to see site; live reload is enabled.
 
 ## Example Questions
 
@@ -26,4 +23,4 @@ Mozilla Public License 2.0
 
 ## About
 
-Developed in 🇨🇦 Canada at [BCIT's](https://www.bcit.ca/) [Learning and Teaching Centre](https://www.bcit.ca/learning-teaching-centre/). [Contact Us](mailto:courseproduction@bcit.ca).
+Developed in Canada at [BCIT's](https://www.bcit.ca/) [Teaching and Learning Unit](https://www.bcit.ca/learning-teaching-centre/). [Contact Us](mailto:courseproduction@bcit.ca).
