@@ -1,0 +1,6 @@
+apiVersion: v2
+name: qcon-guide
+description: Qcon Guide — documentation for using the Qcon question conversion tool.
+type: application
+version: 0.1.0
+appVersion: "0.1.0" # x-release-please-version
