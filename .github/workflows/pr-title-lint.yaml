@@ -1,14 +1,14 @@
 name: pr-title-lint
 
-# Gate non-conventional PR titles at the merge boundary so unparseable
-# squash-merge commits can't land on main and silently starve
-# release-please of the feat:/fix:/BREAKING signals it uses to open
-# release PRs.
+# Enforce Conventional Commit PR titles so release-please can parse changes.
 
 on:
   pull_request_target:
     types: [opened, edited, reopened, synchronize]
     branches: [main]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
