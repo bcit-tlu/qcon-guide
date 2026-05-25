@@ -47,7 +47,5 @@
 
 ## Deployment
 
-- CI uses the shared `bcit-tlu/.github` OCI build reusable workflow
-- Helm chart is published to `oci://ghcr.io/bcit-tlu/qcon-guide/charts`
 - Deployed to Kubernetes via Flux CD (see `bcit-tlu/flux-fleet`)
 - Ingress: `qcon-guide.<CLUSTER_ENV>.ltc.bcit.ca`

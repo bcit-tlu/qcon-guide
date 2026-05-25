@@ -50,6 +50,8 @@ jobs:
               sys.exit(1)
           PY
 
+  # Releases made with GITHUB_TOKEN do not trigger release/tag workflows.
+  # Dispatch publish workflows explicitly for the new tag.
   dispatch-publish:
     needs: release
     if: needs.release.outputs.releases_created == 'true'
