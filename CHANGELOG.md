@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/bcit-tlu/qcon-guide/compare/v0.2.0...v0.2.1) (2026-09-16)
+
+
+### Bug Fixes
+
+* **ci:** gate image publishing on chart validation ([775bad7](https://github.com/bcit-tlu/qcon-guide/commit/775bad766f0a96da8adfebff387b1f29f18b4e7d))
+* **ci:** gate image publishing on chart validation ([784e5b4](https://github.com/bcit-tlu/qcon-guide/commit/784e5b490ccd6d0575782505d4267617bb8f0856))
+
 ## [0.2.0](https://github.com/bcit-tlu/qcon-guide/compare/v0.1.0...v0.2.0) (2026-05-15)
 
 
