@@ -46,6 +46,7 @@ jobs:
   # Container image build/publish (reusable workflow)
 
   build-qcon-guide:
+    needs: [helm-lint]
     uses: bcit-tlu/.github/.github/workflows/oci-build.yaml@main
     permissions:
       contents: read

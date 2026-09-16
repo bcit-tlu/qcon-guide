@@ -38,7 +38,7 @@
 ## CI/CD
 
 - CI uses shared `bcit-tlu/.github` OCI build reusable workflow
-- `helm-lint` validates Helm charts on every push and PR
+- `helm-lint` validates Helm charts on every push and PR and gates image publication
 - `release-please` manages versioning via conventional commits (`release-type: "simple"`)
 - Version is tracked in `.release-please-manifest.json` and `Chart.yaml` (`# x-release-please-version` annotations)
 - Images are published to `ghcr.io/bcit-tlu/qcon-guide/qcon-guide`
