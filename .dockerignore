@@ -28,6 +28,7 @@ dist
 build
 out
 coverage
+public/
 
 # Kubernetes / Helm artifacts
 charts/**/.tgz
