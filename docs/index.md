@@ -13,6 +13,8 @@ title: Overview
 <figcaption>Manage questions using Word.<br>Import/Export to a Learning Management System.</figcaption>
 </figure>
 
+Qcon converts Word documents into SCORM question libraries for your LMS. It also works the other way: import a SCORM package to edit questions in your browser and export them back to Word or SCORM. Everything runs locally in your browser; your file is never uploaded.
+
 To use Qcon your Word file needs to follow some simple formatting rules.
 
 !!! note "Question types"
@@ -94,5 +96,11 @@ To use Qcon your Word file needs to follow some simple formatting rules.
         - strikethrough text
         - underlined text
         - highlighted text
+
+!!! note "Track Changes and comments"
+
+    - If your document has unresolved **Track Changes**, Qcon shows a warning listing each change. The **original text** is imported: reviewer insertions are dropped and deletions are kept.
+    - **Comments** are not imported, but a warning lists each comment so nothing is missed.
+    - For cleanest results, accept or reject all changes and delete comments in Word before importing.
 
 [^1]: footnotes are ignored

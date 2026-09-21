@@ -1,6 +1,10 @@
 # The Qcon Process
 
-*Qcon converts a Word document into a package file that can be imported into your Learning Management System (LMS) question library.*
+*Qcon converts between Word documents and package files that can be imported into your Learning Management System (LMS) question library.*
+
+!!! info "Runs entirely in your browser"
+
+    Qcon processes your file locally in your browser. Your file stays on your computer and is never uploaded to a server.
 
 <!--
 ## Retrieve from LMS
@@ -12,7 +16,7 @@ To be added
 
 ## Conversion Process
 
-The conversion process is a series of steps that Qcon takes to convert your Word document into a package file that can be imported into your LMS. The process is automatic and takes a few minutes to complete.
+The conversion process is a series of steps that Qcon takes to convert your Word document into a package file that can be imported into your LMS.
 
 ???+ "Step 1: Create a document of questions using Word"
     **QCon formatting examples file:** [qcon_formatting_examples.docx :fontawesome-regular-file-word:](./assets/example_files/qcon_formatting_examples.docx)
@@ -20,20 +24,39 @@ The conversion process is a series of steps that Qcon takes to convert your Word
     1. The questions should have numerical numbering
     1. The first question must be numbered "1." or "1)"
 
-???- "Step 2: Upload your Word file to Qcon"
+???- "Step 2: Import your file into Qcon"
 
-    1. Select your Word file from your computer
-    1. Click the **Upload** button
-???- "Step 3: Preview your questions"
+    1. Drag your file onto the drop area, or click it to choose a file
+    1. Accepted formats: Word (`.docx`) and SCORM question library (`.zip`)
+    1. Click the **Import File** button
 
-    1. Qcon will display a preview of your questions
-    1. Review the questions to ensure they are correct
-    1. If you need to make changes, re-upload your Word file and repeat the process
-???- "Step 4: Download your ZIP file"
+    !!! tip "Additional Options"
 
-    1. Click the **Next** button
-    1. Follow the instructions how to upload the ZIP file in your LMS
-    1. Click the **Download ZIP file** button
+        Expanding **Additional Options** before importing lets you:
+
+        - **Randomize answers** (default: off). Shuffles the answers on Multiple Choice and Multi-Select questions. Matching and Ordering questions are always shuffled. See [randomizing answers](./additional-info/answer-randomization.md)
+        - **Answer Enumeration** (default: Letters (a,b,c)). Changes how answers are labeled (like a,b,c or i,ii,iii) on Multiple Choice, True/False, and Multi-Select questions.
+        - **Custom Image Folder** (default: `assessment-assets/{quiz title}/`). Images are placed in this folder in the course's Manage Files area. See [media & links](./additional-info/media-links.md)
+
+???- "Step 3: Preview and edit your questions"
+
+    1. Qcon displays a preview of your questions
+    1. Click a question to edit it, or use **Edit all** to edit the whole library
+    1. Click **View Summary** to see question counts and any issues found
+    1. If you need to make larger changes, edit your Word file and import it again
+
+    !!! warning "Track Changes and comments"
+
+        If your Word file contains unresolved **Track Changes** or **comments**, a warning lists each change and comment. The original text is imported: reviewer insertions are dropped and deletions are kept. Review the questions carefully.
+
+???- "Step 4: Export your questions"
+
+    1. Click **Export SCORM zip** to download the package for your LMS (see below for upload instructions)
+    1. Or click **Export Word (.docx)** to save an editable Word copy of your question library
+
+    !!! note
+
+        If the imported file had tracked changes or comments, Qcon confirms before exporting to Word since they are not carried over to the exported file.
 
 
 ## Uploading the course package ZIP file to Learning Hub
@@ -76,9 +99,9 @@ There are three main categories of errors that can occur during conversion
 1. **Question formatting errors** [(example)](./assets/example_files/qcon_formatting_examples_with_error.docx)
 1. **System errors**.
 
-The first pass over the document is to check for **Word document errors**. If any are found, the conversion process will stop and you will be notified of the errors. You will need to correct the errors in your Word document and re-upload it to Qcon.
+The first pass over the document is to check for **Word document errors**. If any are found, the import will stop and you will be notified of the errors. You will need to correct the errors in your file and import it again.
 
-If no **Word document errors** are found, the conversion process will continue to the question formatting check. If any **Question formatting errors** are found, the conversion process will stop and you will be notified of the errors. You will need to correct the errors in your Word document and re-upload it to Qcon.
+If no **Word document errors** are found, the import continues to the question formatting check. **Question formatting errors** do not stop the import; they are shown in the preview and the **View Summary** panel so you can review them.
 
 !!! warning "Word document errors"
     
@@ -88,7 +111,7 @@ If no **Word document errors** are found, the conversion process will continue t
     - Missing content
     - Incorrect question numbering (only numerical numbering supported)
 
-    If any Word document errors are found, the conversion process will stop and you will be notified of the errors. You will need to correct the errors in your Word document and re-upload it to Qcon.
+    If any Word document errors are found, the import will stop and you will be notified of the errors. You will need to correct the errors in your file and import it again.
 
     An important requirement to note is that the first question must be numbered "1." or "1)" . Otherwise Qcon will not be able to find content.
 
@@ -101,7 +124,7 @@ If no **Word document errors** are found, the conversion process will continue t
     - Missing answer choices
     - Missing correct answer
 
-    If any question formatting errors are found, these will be displayed in the preview of your questions. You will need to correct the errors in your Word document and re-upload it to Qcon. check the qcon-guide for more information about the question type that shows the error.
+    If any question formatting errors are found, they will be displayed in the preview of your questions and in the **View Summary** panel. You can fix them directly in the editor, or correct your Word file and import it again. Check the question type pages in this guide for more information about a specific error.
 
 
 

@@ -27,6 +27,14 @@ To position an image correctly:
 
 If your image changes location after completing the steps above, reposition the image by dragging it to where you want it.
 
+!!! note "Where images are stored"
+
+    In the exported SCORM package, images are placed in an `assessment-assets/{quiz title}/` folder in the course's *Manage Files* area by default. To use a different folder name, expand **Additional Options** on the import page and check **Custom Image Folder**.
+
+!!! warning "Existing folders are overwritten"
+
+    If the destination folder already exists in the course's *Manage Files* area, imported images replace existing files with the same name. Use a unique quiz title or a custom folder name if you import several packages that share images or filenames.
+
 If you use the editing tools in Word to crop or resize an image, you have to compress the image or it will show the uncropped or resized version of the image. Do the following to compress the image:
 
 1. Select/click the image on the Word document

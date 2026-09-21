@@ -26,13 +26,11 @@ Only Multiple Choice (MC) and Multiple-Select (MS) types can have randomized ans
 
 === "All questions"
 
-    Check the **Randomize all** option on the *Upload a File* page.
-
-    ![Randomize in web page](../assets/randomize.png){ width="450" }
+    Expand **Additional Options** on the import page and check **Randomize answers** (default: off). This shuffles the answers on Multiple Choice and Multi-Select questions; Matching and Ordering questions are always shuffled.
 
 === "Individual questions"
 
-    Include the text **`Randomize: true`** above the question text.
+    Include the text **`Randomize: true`** or **`Randomize: false`** above the question text.
 
         Randomize: true
 

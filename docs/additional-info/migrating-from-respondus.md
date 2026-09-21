@@ -7,7 +7,7 @@ hide:
 
 Qcon improves upon Respondus in two important ways:
 
-- **it is web-based**, which makes it available to everyone, not just those who run Windows
+- **it runs entirely in your browser**, which makes it available to everyone, not just those who run Windows, and your file is never uploaded to a server
 - **correct answers have the asterisk *after* the list number**
 
 Qcon has other benefits like answer key answers for FIB, MAT, and ORD-type questions, no *Type: ...* requirements, and better error messaging, but we'll stop there and let you discover Qcon's usefulness at your own pace!
