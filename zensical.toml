@@ -9,6 +9,7 @@ docs_dir = "docs"
 site_dir = "public"
 
 extra_css = ["css/qcon-guide.css"]
+extra_javascript = ["javascripts/analytics.js"]
 
 nav = [
   "index.md",
@@ -32,6 +33,7 @@ nav = [
     { "Randomizing Answers" = "additional-info/answer-randomization.md" },
     { "Ordered List Details" = "additional-info/ordered-list-details.md" },
     "additional-info/migrating-from-respondus.md",
+    "additional-info/site-analytics.md",
   ] },
 ]
 
