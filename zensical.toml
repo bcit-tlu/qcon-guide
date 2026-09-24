@@ -1,0 +1,102 @@
+# SPDX-License-Identifier: MPL-2.0
+[project]
+site_name = "Qcon Guide"
+site_url = "https://qcon-guide.ltc.bcit.ca"
+# Hijack the repo link to point at the Qcon service
+repo_name = "qcon.ltc.bcit.ca"
+repo_url = "https://qcon.ltc.bcit.ca"
+docs_dir = "docs"
+site_dir = "public"
+
+extra_css = ["css/qcon-guide.css"]
+extra_javascript = ["javascripts/analytics.js"]
+
+nav = [
+  "index.md",
+  "qcon-process.md",
+  "basic-question-types.md",
+  { "Question Type Details" = [
+    { "True/False (TF)" = "detailed-question-types/true-false.md" },
+    { "Multiple Choice (MC)" = "detailed-question-types/multiple-choice.md" },
+    { "Multiple-Select (MS)" = "detailed-question-types/multiple-select.md" },
+    { "Written Response (WR)" = "detailed-question-types/written-response.md" },
+    { "Fill-in-Blank (FIB)" = "detailed-question-types/fill-in-blanks.md" },
+    { "Matching (MAT)" = "detailed-question-types/matching.md" },
+    { "Ordering (ORD)" = "detailed-question-types/ordering.md" },
+  ] },
+  { "Additional Information" = [
+    "additional-info/media-links.md",
+    "additional-info/sections.md",
+    "additional-info/points.md",
+    "additional-info/titles-short-descriptions.md",
+    { "Using an Answer Key" = "additional-info/end-answer-key.md" },
+    { "Randomizing Answers" = "additional-info/answer-randomization.md" },
+    { "Ordered List Details" = "additional-info/ordered-list-details.md" },
+    "additional-info/migrating-from-respondus.md",
+    "additional-info/site-analytics.md",
+  ] },
+]
+
+[project.theme]
+variant = "classic"
+language = "en"
+features = [
+  "navigation.sections",
+  "navigation.instant",
+  "navigation.top",
+  "navigation.footer",
+  "navigation.tracking",
+  "content.code.annotate",
+]
+
+[project.theme.palette]
+scheme = "default"
+primary = "teal"
+accent = "green"
+
+[project.theme.font]
+text = "Work Sans"
+
+[project.theme.icon]
+repo = "fontawesome/solid/link"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/envelope"
+link = "mailto:courseproduction@bcit.ca"
+
+[project.plugins.search]
+
+[project.plugins.glightbox]
+
+[project.plugins.minify]
+minify_html = true
+minify_js = true
+minify_css = true
+cache_safe = true
+htmlmin_opts.remove_comments = true
+
+# Not yet supported by Zensical (roadmap: planned); ignored until it is.
+[project.plugins.git-revision-date-localized]
+type = "date"
+fallback_to_build_date = true
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc.permalink = true
+pymdownx.highlight = {}
+pymdownx.mark = {}
+pymdownx.caret = {}
+pymdownx.tilde = {}
+pymdownx.superfences = {}
+pymdownx.details = {}
+pymdownx.tasklist.clickable_checkbox = true
+pymdownx.tabbed.alternate_style = true
+pymdownx.tabbed.slugify.object = "pymdownx.slugs.slugify"
+pymdownx.tabbed.slugify.kwds.case = "lower"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"

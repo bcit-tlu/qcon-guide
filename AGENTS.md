@@ -2,15 +2,15 @@
 
 ## Setup Commands
 
-- Local development: `docker compose up` (runs MkDocs with live reload)
+- Local development: `docker compose up` (runs Zensical with live reload)
 - Build for production: `docker build -t qcon-guide .`
-- Build static site locally: `mkdocs build --site-dir /public` (inside the mkdocs-material container)
+- Build static site locally: `zensical build` (inside the `zensical/zensical` container; output in `public/`)
 - Helm lint: `helm lint charts/`
 - Helm validate: `helm template test charts/ | kubeconform -strict -summary -schema-location default -ignore-missing-schemas`
 
 ## Code Style
 
-- Documentation is written in Markdown using MkDocs Material theme
+- Documentation is written in Markdown using Zensical (classic theme variant)
 - Follow conventional commit format for all PR titles and commits
 - Use lowercase imperative mood for commit subjects
 - License: MPL-2.0
@@ -25,7 +25,7 @@
 - `/docs/additional-info` — Supplementary documentation pages
 - `/conf.d/default.conf` — Nginx configuration for production serving
 - `/charts/` — Helm chart for Kubernetes deployment (flat layout)
-- `/mkdocs.yml` — MkDocs configuration (site name, theme, plugins, navigation)
+- `/zensical.toml` — Zensical configuration (site name, theme, plugins, navigation)
 - `/.github/workflows/` — CI/CD pipelines
 
 ## Development Workflow
