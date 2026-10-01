@@ -65,3 +65,6 @@ dump.rdb
 # *.css
 *.map
 .sass-cache/
+
+# Local git worktrees (convention: <repo>/.worktrees/<name>)
+.worktrees/
