@@ -16,10 +16,6 @@
 (function () {
   'use strict'
 
-  var IS_LATEST = /\.latest\./.test(window.location.hostname)
-  var ENDPOINT = IS_LATEST
-    ? 'https://telemetry.latest.ltc.bcit.ca/v1/logs'
-    : 'https://telemetry.ltc.bcit.ca/v1/logs'
   var SERVICE_NAME = 'qcon-guide-frontend'
   var SCHEMA_VERSION = 1
   var FLUSH_DELAY_MS = 1500
@@ -29,6 +25,11 @@
 
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return
   if (!/\.ltc\.bcit\.ca$/.test(window.location.hostname)) return
+
+  var IS_LATEST = /\.latest\./.test(window.location.hostname)
+  var ENDPOINT = IS_LATEST
+    ? 'https://telemetry.latest.ltc.bcit.ca/v1/logs'
+    : 'https://telemetry.ltc.bcit.ca/v1/logs'
 
   var params = new URLSearchParams(window.location.search)
   var synthetic = params.has('synthetic')
