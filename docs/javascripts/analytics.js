@@ -1,8 +1,11 @@
 /* Qcon Guide — first-party analytics beacon.
  *
- * Posts OTLP/HTTP log records to the platform collector at
- * telemetry.ltc.bcit.ca, which routes them into the analytics Loki stream
- * behind the Qcon Guide Usage Grafana dashboard.
+ * Posts OTLP/HTTP log records to the platform collector of the cluster that
+ * served the page — telemetry.ltc.bcit.ca for the stable site,
+ * telemetry.latest.ltc.bcit.ca for the .latest site — which routes them into
+ * that environment's analytics Loki stream behind the Qcon Guide Usage
+ * Grafana dashboard. The collector stamps the environment label itself, so
+ * posting to the matching host is what keeps latest and stable usage apart.
  *
  * Privacy posture: aggregate-only. No cookies, no user identifiers, no raw
  * user-agent or screen dimensions. The only persisted state is a
@@ -13,7 +16,6 @@
 (function () {
   'use strict'
 
-  var ENDPOINT = 'https://telemetry.ltc.bcit.ca/v1/logs'
   var SERVICE_NAME = 'qcon-guide-frontend'
   var SCHEMA_VERSION = 1
   var FLUSH_DELAY_MS = 1500
@@ -23,6 +25,11 @@
 
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return
   if (!/\.ltc\.bcit\.ca$/.test(window.location.hostname)) return
+
+  var IS_LATEST = /\.latest\./.test(window.location.hostname)
+  var ENDPOINT = IS_LATEST
+    ? 'https://telemetry.latest.ltc.bcit.ca/v1/logs'
+    : 'https://telemetry.ltc.bcit.ca/v1/logs'
 
   var params = new URLSearchParams(window.location.search)
   var synthetic = params.has('synthetic')
@@ -98,7 +105,7 @@
     client_touch_capable: touch,
   }
 
-  var environment = /\.latest\./.test(window.location.hostname) ? 'latest' : 'stable'
+  var environment = IS_LATEST ? 'latest' : 'stable'
 
   function currentPage() {
     return window.location.pathname
