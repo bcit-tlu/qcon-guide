@@ -4,6 +4,9 @@ title: Overview
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 
+!!! note "Preview build"
+    This page is served from a pull-request preview environment (flux-fleet-v2 PR previews smoke test). It should not appear on the permanent `latest` site.
+
 # What is Qcon?
 
 **Qcon is a conversion tool that makes it easy to manage online learning questions.**
