@@ -64,6 +64,17 @@ jobs:
       push_pr_images: true
     secrets: inherit
 
+  validate:
+    if: always()
+    needs: [helm-lint, build-qcon-guide]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify all gates passed
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        run: |
+          echo "$NEEDS" | jq -e 'to_entries | all(.value.result == "success")' >/dev/null
+
   # Publish chart from main pushes using the image RC version.
 
   helm-publish:
